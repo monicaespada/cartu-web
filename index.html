@@ -29,7 +29,7 @@
 
         .hero-bg {
             background: linear-gradient(rgba(10, 10, 12, 0.7), rgba(10, 10, 12, 0.9)), 
-                        url('IMG-20260126-WA0008.jpg'); /* Imagen de portada principal */
+                        url('1763933986019.jpg'); /* Foto principal de portada */
             background-size: cover;
             background-position: center;
         }
@@ -72,30 +72,11 @@
             background-color: #25D366;
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
         }
-        
-        .nav-link {
-            position: relative;
-            transition: color 0.3s;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 0;
-            background-color: var(--neon-violet);
-            transition: width 0.3s;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
     </style>
 </head>
 <body>
 
+    <!-- Navegación -->
     <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
         <div class="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
             <div class="flex items-center gap-2">
@@ -107,63 +88,53 @@
                 <span class="text-lg font-black logo-font text-white uppercase tracking-tighter">Cartu Audio</span>
             </div>
             
-            <div class="hidden md:flex items-center gap-8">
-                <a href="#galeria" class="nav-link text-xs uppercase font-bold tracking-widest text-gray-300 hover:text-white">Galería</a>
-                <a href="#nosotros" class="nav-link text-xs uppercase font-bold tracking-widest text-gray-300 hover:text-white">Nosotros</a>
-                <a href="#servicios" class="nav-link text-xs uppercase font-bold tracking-widest text-gray-300 hover:text-white">Servicios</a>
-                <a href="#contacto" class="nav-link text-xs uppercase font-bold tracking-widest text-gray-300 hover:text-white">Contacto</a>
-            </div>
-
             <a href="https://www.instagram.com/cartu_ber4?igsh=NG9nMDliejAwcHR5" target="_blank" class="text-white hover:text-pink-500 transition text-2xl">
                 <i class="fab fa-instagram"></i>
             </a>
         </div>
     </nav>
 
+    <!-- Header -->
     <header class="hero-bg h-screen flex items-center justify-center text-center px-6">
         <div class="max-w-3xl">
             <h1 class="text-4xl md:text-7xl font-extrabold mb-6 leading-tight text-white uppercase">
-                Equipamiento Profesional para <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-400">Momentos Inolvidables</span>
+                Equipamiento Profesional para <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-400">Eventos</span>
             </h1>
-            <p class="text-lg md:text-xl text-gray-300 mb-10 font-light max-w-2xl mx-auto">
-                Sonido e iluminación de alta gama garantizado por <strong>Cartu</strong>.
+            <p class="text-lg md:text-xl text-gray-300 mb-10 font-light">
+                Sonido e iluminación garantizado por <strong>Cartu</strong>.
             </p>
             
             <a href="https://wa.me/34600000000" class="btn-whatsapp inline-flex items-center gap-3 px-10 py-4 rounded-2xl font-bold text-white uppercase tracking-widest text-sm transition-transform hover:scale-105">
                 <i class="fab fa-whatsapp text-2xl"></i>
-                Pedir presupuesto
+                Contactar ahora
             </a>
         </div>
     </header>
 
+    <!-- Galería con tus archivos reales de GitHub -->
     <section id="galeria" class="py-20 px-6">
         <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-2xl font-bold mb-12 uppercase logo-font tracking-widest text-violet-400">Nuestro Arsenal</h2>
+            <h2 class="text-2xl font-bold mb-12 uppercase logo-font tracking-widest text-violet-400">Galería</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Foto de mesa/equipo -->
                 <div class="group img-container aspect-square">
-                    <img src="IMG-20260126-WA0009.jpg" alt="Equipos Cartu Audio" class="img-real">
+                    <img src="IMG-20251121-WA0011.jpg" alt="Equipo de sonido" class="img-real">
                 </div>
+                <!-- Foto de iluminación -->
                 <div class="group img-container aspect-square">
-                    <img src="IMG-20260126-WA0010.jpg" alt="Iluminación Cartu Audio" class="img-real">
+                    <img src="IMG-20251205-WA0001.jpg" alt="Iluminación profesional" class="img-real">
                 </div>
+                <!-- Foto de montaje -->
                 <div class="group img-container aspect-square">
-                    <img src="VID-20250618-WA0000.jpg" alt="Evento Cartu Audio" class="img-real">
+                    <img src="IMG-20260126-WA0008.jpg" alt="Montaje de evento" class="img-real">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="nosotros" class="py-20 bg-zinc-950 px-6">
-        <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-2xl font-bold mb-8 uppercase logo-font tracking-widest text-cyan-400">Sobre Nosotros</h2>
-            <p class="text-gray-400 leading-relaxed">
-                Especialistas en transformar espacios a través del sonido y la luz. Cartu Audio garantiza un montaje profesional y una calidad acústica impecable.
-            </p>
-        </div>
-    </section>
-
+    <!-- Contacto -->
     <section id="contacto" class="py-20 bg-zinc-950 px-6 text-center">
-        <h2 class="text-2xl font-bold mb-8 uppercase logo-font tracking-widest text-cyan-400">¿Hablamos?</h2>
+        <h2 class="text-2xl font-bold mb-8 uppercase logo-font tracking-widest text-cyan-400">Síguenos</h2>
         <div class="flex justify-center gap-10">
             <a href="https://wa.me/34600000000" class="text-green-500 text-5xl hover:scale-110 transition"><i class="fab fa-whatsapp"></i></a>
             <a href="https://www.instagram.com/cartu_ber4?igsh=NG9nMDliejAwcHR5" target="_blank" class="text-pink-500 text-5xl hover:scale-110 transition"><i class="fab fa-instagram"></i></a>
