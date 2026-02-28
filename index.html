@@ -3,146 +3,254 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CARTU AUDIO - Sonido e Iluminación</title>
+    <title>Cartu Eventos | Alquiler de Equipos</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@900&display=swap');
-
         :root {
-            --neon-violet: #8b5cf6;
-            --neon-blue: #06b6d4;
-            --dark-bg: #0a0a0c;
+            --neon-cyan: #00f3ff;
+            --neon-purple: #bc13fe;
         }
-
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--dark-bg);
+            background-color: #050505;
             color: #ffffff;
             scroll-behavior: smooth;
         }
+        .font-logo { font-family: 'Orbitron', sans-serif; }
 
-        .logo-font {
-            font-family: 'Orbitron', sans-serif;
-            letter-spacing: 0.1em;
+        /* Animación del Logo (Ecualizador) */
+        .eq-bar {
+            width: 4px;
+            background: var(--neon-cyan);
+            margin: 0 1px;
+            display: inline-block;
+            animation: bounce 0.8s infinite ease-in-out;
+            border-radius: 2px;
         }
-
-        .hero-bg {
-            background: linear-gradient(rgba(10, 10, 12, 0.7), rgba(10, 10, 12, 0.9)), 
-                        url('1763933986019.jpg'); /* Foto principal de portada */
-            background-size: cover;
-            background-position: center;
-        }
-
-        .img-container {
-            background: #1a1a1e;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 1.5rem;
-        }
-
-        .img-real {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.7s ease;
-        }
-
-        .group:hover .img-real {
-            transform: scale(1.05);
-        }
-
-        .sound-bar {
-            width: 3px;
-            background: white;
-            border-radius: 10px;
-            animation: bounce 1s ease-in-out infinite alternate;
-        }
-        .bar-1 { animation-delay: 0.1s; height: 8px; }
-        .bar-2 { animation-delay: 0.3s; height: 20px; }
-        .bar-3 { animation-delay: 0.2s; height: 12px; }
+        .bar-1 { height: 10px; animation-delay: 0.1s; }
+        .bar-2 { height: 18px; animation-delay: 0.3s; }
+        .bar-3 { height: 14px; animation-delay: 0.2s; }
+        .bar-4 { height: 22px; animation-delay: 0.4s; }
 
         @keyframes bounce {
-            from { transform: scaleY(0.5); }
-            to { transform: scaleY(1.2); }
+            0%, 100% { transform: scaleY(0.5); }
+            50% { transform: scaleY(1.2); }
         }
 
-        .btn-whatsapp {
-            background-color: #25D366;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        .neon-text {
+            text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px rgba(0, 243, 255, 0.5);
         }
+        .neon-border {
+            border: 1px solid rgba(188, 19, 254, 0.3);
+            box-shadow: 0 0 20px rgba(188, 19, 254, 0.15);
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .hero-bg {
+            background-image: linear-gradient(to bottom, rgba(5,5,5,0.4), rgba(5,5,5,1)), url('https://raw.githubusercontent.com/monicaespada/cartu-web/main/1763933986019.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .hover-scale { transition: transform 0.3s ease; }
+        .hover-scale:hover { transform: scale(1.03); }
     </style>
 </head>
-<body>
+<body class="selection:bg-cyan-500 selection:text-black">
 
     <!-- Navegación -->
-    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <div class="flex items-end gap-[2px] h-5 mb-1">
-                    <div class="sound-bar bar-1"></div>
-                    <div class="sound-bar bar-2"></div>
-                    <div class="sound-bar bar-3"></div>
-                </div>
-                <span class="text-lg font-black logo-font text-white uppercase tracking-tighter">Cartu Audio</span>
+    <nav class="fixed w-full z-50 glass py-4 px-6 md:px-12 flex justify-between items-center border-b border-white/5">
+        <div class="flex items-center space-x-3">
+            <!-- Logo Icono Animado -->
+            <div class="flex items-end h-6 overflow-hidden">
+                <div class="eq-bar bar-1"></div>
+                <div class="eq-bar bar-2"></div>
+                <div class="eq-bar bar-3"></div>
+                <div class="eq-bar bar-4"></div>
             </div>
-            
-            <a href="https://www.instagram.com/cartu_ber4?igsh=NG9nMDliejAwcHR5" target="_blank" class="text-white hover:text-pink-500 transition text-2xl">
-                <i class="fab fa-instagram"></i>
+            <span class="font-logo text-xl font-black tracking-widest text-white">
+                CARTU <span class="text-cyan-400">EVENTOS</span>
+            </span>
+        </div>
+        <div class="hidden md:flex items-center space-x-8 text-xs font-bold uppercase tracking-[0.2em]">
+            <a href="#inicio" class="text-cyan-400 hover:text-white transition">Inicio</a>
+            <a href="#equipos" class="hover:text-cyan-400 transition">Equipamiento</a>
+            <a href="#experiencia" class="hover:text-cyan-400 transition">Experiencia</a>
+            <a href="https://www.instagram.com/cartu_ber4?igsh=NG9nMDliejAwcHR5" target="_blank" class="text-white hover:text-pink-500 transition text-lg">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.209-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
             </a>
+            <a href="https://wa.me/34670835823" target="_blank" class="bg-white text-black px-4 py-2 rounded hover:bg-cyan-400 transition">Contacto</a>
         </div>
     </nav>
 
-    <!-- Header -->
-    <header class="hero-bg h-screen flex items-center justify-center text-center px-6">
-        <div class="max-w-3xl">
-            <h1 class="text-4xl md:text-7xl font-extrabold mb-6 leading-tight text-white uppercase">
-                Equipamiento Profesional para <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-400">Eventos</span>
+    <!-- Hero Section -->
+    <header id="inicio" class="relative min-h-screen flex items-center justify-center hero-bg pt-20">
+        <div class="text-center px-4 max-w-5xl z-10">
+            <div class="inline-block px-4 py-1 border border-cyan-500/50 rounded-full text-cyan-400 text-xs font-bold uppercase tracking-widest mb-6 animate-pulse">
+                Calidad Profesional Garantizada
+            </div>
+            <h1 class="font-logo text-4xl md:text-7xl font-black mb-8 leading-tight">
+                LLEVA TU FIESTA AL <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-white to-purple-500 neon-text">
+                    SIGUIENTE NIVEL
+                </span>
             </h1>
-            <p class="text-lg md:text-xl text-gray-300 mb-10 font-light">
-                Sonido e iluminación garantizado por <strong>Cartu</strong>.
+            <p class="text-gray-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto font-light">
+                Expertos en alquiler de sonido, iluminación de última generación y efectos visuales para eventos inolvidables.
             </p>
-            
-            <a href="https://wa.me/34600000000" class="btn-whatsapp inline-flex items-center gap-3 px-10 py-4 rounded-2xl font-bold text-white uppercase tracking-widest text-sm transition-transform hover:scale-105">
-                <i class="fab fa-whatsapp text-2xl"></i>
-                Contactar ahora
-            </a>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+                <!-- Botón de reserva con enlace a WhatsApp -->
+                <a href="https://wa.me/34670835823" target="_blank" class="w-full md:w-auto bg-cyan-500 hover:bg-white text-black font-black py-5 px-12 rounded-full transition-all transform hover:scale-105 shadow-[0_0_30px_rgba(0,243,255,0.4)]">
+                    ¡RESERVA AHORA!
+                </a>
+                <a href="#equipos" class="w-full md:w-auto glass py-5 px-12 rounded-full font-bold hover:bg-white/10 transition">
+                    Ver Equipamiento
+                </a>
+            </div>
         </div>
+        
+        <!-- Efecto de gradiente inferior -->
+        <div class="absolute bottom-0 w-full h-32 bg-gradient-to-t from-[#050505] to-transparent"></div>
     </header>
 
-    <!-- Galería con tus archivos reales de GitHub -->
-    <section id="galeria" class="py-20 px-6">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-2xl font-bold mb-12 uppercase logo-font tracking-widest text-violet-400">Galería</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Foto de mesa/equipo -->
-                <div class="group img-container aspect-square">
-                    <img src="IMG-20251121-WA0011.jpg" alt="Equipo de sonido" class="img-real">
+    <!-- Sección de Equipamiento -->
+    <section id="equipos" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-20">
+                <h2 class="font-logo text-3xl md:text-5xl font-bold mb-4">EQUIPAMIENTO <span class="text-purple-500">PRO</span></h2>
+                <p class="text-gray-500 uppercase tracking-widest text-sm">Tecnología de punta para tus mejores momentos</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Sonido -->
+                <div class="glass rounded-3xl overflow-hidden neon-border hover-scale group">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://raw.githubusercontent.com/monicaespada/cartu-web/main/IMG-20251121-WA0002.jpg" alt="Sonido" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    </div>
+                    <div class="p-8">
+                        <div class="text-cyan-400 mb-2 text-xs font-bold tracking-tighter uppercase">01. Audio</div>
+                        <h3 class="font-logo text-xl font-bold mb-3">SONIDO</h3>
+                        <p class="text-gray-400 text-sm font-light">Sistemas de altavoces potentes y micrófonos para una nitidez perfecta.</p>
+                    </div>
                 </div>
-                <!-- Foto de iluminación -->
-                <div class="group img-container aspect-square">
-                    <img src="IMG-20251205-WA0001.jpg" alt="Iluminación profesional" class="img-real">
+
+                <!-- Iluminación -->
+                <div class="glass rounded-3xl overflow-hidden neon-border hover-scale group">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://raw.githubusercontent.com/monicaespada/cartu-web/main/IMG-20251205-WA0007.jpg" alt="Iluminación" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    </div>
+                    <div class="p-8">
+                        <div class="text-purple-400 mb-2 text-xs font-bold tracking-tighter uppercase">02. Light Show</div>
+                        <h3 class="font-logo text-xl font-bold mb-3">ILUMINACIÓN</h3>
+                        <p class="text-gray-400 text-sm font-light">Láseres rítmicos, focos LED y rayos que transforman el ambiente.</p>
+                    </div>
                 </div>
-                <!-- Foto de montaje -->
-                <div class="group img-container aspect-square">
-                    <img src="IMG-20260126-WA0008.jpg" alt="Montaje de evento" class="img-real">
+
+                <!-- Efectos -->
+                <div class="glass rounded-3xl overflow-hidden neon-border hover-scale group">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://raw.githubusercontent.com/monicaespada/cartu-web/main/IMG-20251230-WA0055.jpg" alt="Efectos" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    </div>
+                    <div class="p-8">
+                        <div class="text-cyan-400 mb-2 text-xs font-bold tracking-tighter uppercase">03. Atmosphere</div>
+                        <h3 class="font-logo text-xl font-bold mb-3">EFECTOS</h3>
+                        <p class="text-gray-400 text-sm font-light">Máquinas de humo y efectos especiales para una experiencia inmersiva.</p>
+                    </div>
+                </div>
+
+                <!-- Visuales -->
+                <div class="glass rounded-3xl overflow-hidden neon-border hover-scale group">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://raw.githubusercontent.com/monicaespada/cartu-web/main/IMG-20260126-WA0009.jpg" alt="Visuales" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    </div>
+                    <div class="p-8">
+                        <div class="text-purple-400 mb-2 text-xs font-bold tracking-tighter uppercase">04. Visuals</div>
+                        <h3 class="font-logo text-xl font-bold mb-3">VISUALES</h3>
+                        <p class="text-gray-400 text-sm font-light">Pantallas de alta resolución y soporte digital para tus contenidos.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contacto -->
-    <section id="contacto" class="py-20 bg-zinc-950 px-6 text-center">
-        <h2 class="text-2xl font-bold mb-8 uppercase logo-font tracking-widest text-cyan-400">Síguenos</h2>
-        <div class="flex justify-center gap-10">
-            <a href="https://wa.me/34600000000" class="text-green-500 text-5xl hover:scale-110 transition"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.instagram.com/cartu_ber4?igsh=NG9nMDliejAwcHR5" target="_blank" class="text-pink-500 text-5xl hover:scale-110 transition"><i class="fab fa-instagram"></i></a>
+    <!-- Sección de Experiencia -->
+    <section id="experiencia" class="py-32 px-6 bg-[#080808] border-y border-white/5">
+        <div class="max-w-4xl mx-auto flex flex-col items-center text-center">
+            <div class="mb-10 inline-flex items-center space-x-2 text-purple-500">
+                <span class="w-12 h-[1px] bg-purple-500"></span>
+                <span class="font-logo text-sm tracking-widest uppercase">Experiencia Cartu</span>
+                <span class="w-12 h-[1px] bg-purple-500"></span>
+            </div>
+            <h2 class="font-logo text-3xl md:text-5xl font-black mb-8">PLAYLISTS PERSONALIZADAS</h2>
+            <p class="text-xl text-gray-400 leading-relaxed font-light mb-8 italic">
+                "Entendemos que cada evento tiene su propia identidad. No solo instalamos el equipo, te asesoramos en la curación musical para que cada canción eleve la energía de tus invitados."
+            </p>
+            <div class="flex space-x-2">
+                <div class="w-2 h-2 rounded-full bg-cyan-500"></div>
+                <div class="w-2 h-2 rounded-full bg-purple-500"></div>
+                <div class="w-2 h-2 rounded-full bg-white"></div>
+            </div>
         </div>
     </section>
 
-    <footer class="py-12 border-t border-white/5 text-center">
-        <p class="text-gray-500 text-xs uppercase tracking-widest">Cartu Audio © 2026</p>
+    <!-- Footer / Contacto -->
+    <footer id="contacto" class="pt-32 pb-12 px-6 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-20">
+                <div>
+                    <h2 class="font-logo text-4xl font-black mb-6">¿Hablamos de tu <br><span class="text-cyan-400">próximo evento?</span></h2>
+                    <p class="text-gray-500 mb-10 text-lg">Estamos listos para asesorarte y darte el mejor presupuesto sin compromiso.</p>
+                    
+                    <div class="flex flex-col space-y-4">
+                        <a href="https://wa.me/34670835823" target="_blank" class="inline-flex items-center space-x-4 bg-green-500/10 border border-green-500/50 hover:bg-green-500 hover:text-black transition-all p-6 rounded-2xl group">
+                            <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-2.32 0-4.591.993-6.41 2.813-3.238 3.239-3.238 8.514 0 11.753l-.92 3.387 3.463-.903c1.238.677 2.618 1.033 4.029 1.033 4.576 0 8.303-3.726 8.303-8.303 0-2.203-.857-4.275-2.414-5.832-1.557-1.558-3.63-2.414-5.832-2.414l-.219-.002zm5.422 11.528c-.227.639-1.332 1.209-1.841 1.279-.459.063-1.054.114-3.048-.67-2.553-1.006-4.185-3.597-4.312-3.767-.126-.169-.938-1.248-.938-2.381 0-1.134.593-1.691.805-1.916.212-.225.466-.282.621-.282.155 0 .31.003.444.009.141.006.331-.054.518.397.187.452.641 1.56.697 1.673.056.113.094.245.019.395-.075.15-.113.245-.226.376-.113.132-.236.293-.338.395-.113.113-.231.236-.101.459.13.223.578.955 1.246 1.55.859.766 1.583 1.004 1.809 1.117.226.113.358.094.49-.056.132-.15.565-.66.716-.885.151-.226.301-.188.508-.113s1.319.622 1.545.735c.226.113.377.169.433.264.056.094.056.546-.171 1.185z"/></svg>
+                            <div>
+                                <div class="text-xs uppercase font-bold opacity-70">Atención Directa</div>
+                                <div class="text-xl font-bold">WhatsApp: 670 835 823</div>
+                            </div>
+                        </a>
+                        
+                        <a href="https://www.instagram.com/cartu_ber4?igsh=NG9nMDliejAwcHR5" target="_blank" class="inline-flex items-center space-x-4 bg-pink-500/10 border border-pink-500/50 hover:bg-pink-500 hover:text-white transition-all p-6 rounded-2xl group">
+                            <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.209-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            <div>
+                                <div class="text-xs uppercase font-bold opacity-70">Síguenos</div>
+                                <div class="text-xl font-bold">@cartu_ber4</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="glass p-10 rounded-3xl border-l-4 border-cyan-500">
+                    <h4 class="font-logo text-xl font-bold mb-6">INFORMACIÓN</h4>
+                    <ul class="space-y-6 text-gray-400">
+                        <li class="flex items-start">
+                            <span class="text-cyan-400 mr-4">📍</span>
+                            <span><strong>Ubicación:</strong> Cobertura total en Ciudad y alrededores.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-cyan-400 mr-4">🚚</span>
+                            <span><strong>Logística:</strong> Montaje, desmontaje y transporte incluido según zona.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-cyan-400 mr-4">⏱️</span>
+                            <span><strong>Horario:</strong> Disponibilidad 24/7 para tus eventos.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-white/5 text-xs text-gray-600 uppercase tracking-widest">
+                <div class="mb-4 md:mb-0">© 2026 CARTU EVENTOS - LOGO & PRODUCCIÓN</div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-white transition">Aviso Legal</a>
+                    <a href="#" class="hover:text-white transition">Privacidad</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
 </body>
