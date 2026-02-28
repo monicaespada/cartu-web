@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARTU AUDIO - Sonido e Iluminación</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@900&display=swap');
+
+        :root {
+            --neon-violet: #8b5cf6;
+            --neon-blue: #06b6d4;
+            --dark-bg: #0a0a0c;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        .logo-font {
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 0.1em;
+        }
+
+        .hero-bg {
+            background: linear-gradient(rgba(10, 10, 12, 0.7), rgba(10, 10, 12, 0.9)), 
+                        url('IMG-20260126-WA0008.jpg'); /* Imagen de portada principal */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .img-container {
+            background: #1a1a1e;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 1.5rem;
+        }
+
+        .img-real {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .group:hover .img-real {
+            transform: scale(1.05);
+        }
+
+        .sound-bar {
+            width: 3px;
+            background: white;
+            border-radius: 10px;
+            animation: bounce 1s ease-in-out infinite alternate;
+        }
+        .bar-1 { animation-delay: 0.1s; height: 8px; }
+        .bar-2 { animation-delay: 0.3s; height: 20px; }
+        .bar-3 { animation-delay: 0.2s; height: 12px; }
+
+        @keyframes bounce {
+            from { transform: scaleY(0.5); }
+            to { transform: scaleY(1.2); }
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--neon-violet);
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="flex items-end gap-[2px] h-5 mb-1">
+                    <div class="sound-bar bar-1"></div>
+                    <div class="sound-bar bar-2"></div>
+                    <div class="sound-bar bar-3"></div>
+                </div>
+                <span class="text-lg font-black logo-font text-white uppercase tracking-tighter">Cartu Audio</span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#galeria" class="nav-link text-xs uppercase font-bold tracking-widest text-gray-300 hover:text-white">Galería</a>
+                <a href="#nosotros" class="nav-link text-xs uppercase font-bold tracking-widest text-gray-300 hover:text-white">Nosotros</a>
+                <a href="#servicios" class="nav-link text-xs uppercase font-bold tracking-widest text-gray-300 hover:text-white">Servicios</a>
+                <a href="#contacto" class="nav-link text-xs uppercase font-bold tracking-widest text-gray-300 hover:text-white">Contacto</a>
+            </div>
+
+            <a href="https://www.instagram.com/cartu_ber4?igsh=NG9nMDliejAwcHR5" target="_blank" class="text-white hover:text-pink-500 transition text-2xl">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </nav>
+
+    <header class="hero-bg h-screen flex items-center justify-center text-center px-6">
+        <div class="max-w-3xl">
+            <h1 class="text-4xl md:text-7xl font-extrabold mb-6 leading-tight text-white uppercase">
+                Equipamiento Profesional para <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-400">Momentos Inolvidables</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 mb-10 font-light max-w-2xl mx-auto">
+                Sonido e iluminación de alta gama garantizado por <strong>Cartu</strong>.
+            </p>
+            
+            <a href="https://wa.me/34600000000" class="btn-whatsapp inline-flex items-center gap-3 px-10 py-4 rounded-2xl font-bold text-white uppercase tracking-widest text-sm transition-transform hover:scale-105">
+                <i class="fab fa-whatsapp text-2xl"></i>
+                Pedir presupuesto
+            </a>
+        </div>
+    </header>
+
+    <section id="galeria" class="py-20 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-2xl font-bold mb-12 uppercase logo-font tracking-widest text-violet-400">Nuestro Arsenal</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group img-container aspect-square">
+                    <img src="IMG-20260126-WA0009.jpg" alt="Equipos Cartu Audio" class="img-real">
+                </div>
+                <div class="group img-container aspect-square">
+                    <img src="IMG-20260126-WA0010.jpg" alt="Iluminación Cartu Audio" class="img-real">
+                </div>
+                <div class="group img-container aspect-square">
+                    <img src="VID-20250618-WA0000.jpg" alt="Evento Cartu Audio" class="img-real">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="nosotros" class="py-20 bg-zinc-950 px-6">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-2xl font-bold mb-8 uppercase logo-font tracking-widest text-cyan-400">Sobre Nosotros</h2>
+            <p class="text-gray-400 leading-relaxed">
+                Especialistas en transformar espacios a través del sonido y la luz. Cartu Audio garantiza un montaje profesional y una calidad acústica impecable.
+            </p>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-20 bg-zinc-950 px-6 text-center">
+        <h2 class="text-2xl font-bold mb-8 uppercase logo-font tracking-widest text-cyan-400">¿Hablamos?</h2>
+        <div class="flex justify-center gap-10">
+            <a href="https://wa.me/34600000000" class="text-green-500 text-5xl hover:scale-110 transition"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/cartu_ber4?igsh=NG9nMDliejAwcHR5" target="_blank" class="text-pink-500 text-5xl hover:scale-110 transition"><i class="fab fa-instagram"></i></a>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/5 text-center">
+        <p class="text-gray-500 text-xs uppercase tracking-widest">Cartu Audio © 2026</p>
+    </footer>
+
+</body>
+</html>
